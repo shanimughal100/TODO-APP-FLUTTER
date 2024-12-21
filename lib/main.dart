@@ -19,7 +19,7 @@ class _TodoAppState extends State<TodoApp> with TickerProviderStateMixin {
   final TextEditingController _todoController = TextEditingController();
   final TextEditingController _updateController = TextEditingController();
 
-  /// Add Todo
+  
   void _addTodo() {
     final text = _todoController.text.trim();
     if (text.isNotEmpty) {
@@ -30,7 +30,7 @@ class _TodoAppState extends State<TodoApp> with TickerProviderStateMixin {
     }
   }
 
-  /// Update Todo
+  
   void _updateTodo(int index) {
     _updateController.text = _todos[index].text;
 
@@ -51,7 +51,7 @@ class _TodoAppState extends State<TodoApp> with TickerProviderStateMixin {
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: Colors.teal, // Soft teal for a more modern feel
+                    color: Colors.teal, 
                   ),
                 ),
                 const SizedBox(height: 12),
@@ -84,7 +84,7 @@ class _TodoAppState extends State<TodoApp> with TickerProviderStateMixin {
                         }
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.tealAccent, // Light teal accent
+                        backgroundColor: Colors.tealAccent, 
                       ),
                       child: const Text("Update"),
                     ),
@@ -98,14 +98,14 @@ class _TodoAppState extends State<TodoApp> with TickerProviderStateMixin {
     );
   }
 
-  /// Delete Todo
+
   void _deleteTodo(int index) {
     setState(() {
       _todos.removeAt(index);
     });
   }
 
-  /// Toggle Complete
+  
   void _toggleComplete(int index) {
     setState(() {
       _todos[index].isCompleted = !_todos[index].isCompleted;
@@ -121,14 +121,14 @@ class _TodoAppState extends State<TodoApp> with TickerProviderStateMixin {
           style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),
         ),
         centerTitle: true,
-        backgroundColor: Colors.teal.shade500, // Teal color for the app bar
+        backgroundColor: Colors.teal.shade500, 
         elevation: 4,
-        shadowColor: Colors.teal.withAlpha(77), // Soft teal shadow
+        shadowColor: Colors.teal.withAlpha(77), 
       ),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.lightBlue[50]!, Colors.white], // Light blue gradient
+            colors: [Colors.lightBlue[50]!, Colors.white], 
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -156,7 +156,7 @@ class _TodoAppState extends State<TodoApp> with TickerProviderStateMixin {
                   ElevatedButton(
                     onPressed: _addTodo,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.teal, // Teal for the add button
+                      backgroundColor: Colors.teal, 
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),
@@ -185,7 +185,7 @@ class _TodoAppState extends State<TodoApp> with TickerProviderStateMixin {
                               color: Colors.white,
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.teal.withAlpha(30), // Soft teal shadow
+                                  color: Colors.teal.withAlpha(30), 
                                   blurRadius: 5,
                                   spreadRadius: 1,
                                   offset: const Offset(0, 2),
@@ -196,7 +196,7 @@ class _TodoAppState extends State<TodoApp> with TickerProviderStateMixin {
                             child: ListTile(
                               leading: Checkbox(
                                 value: todo.isCompleted,
-                                activeColor: Colors.tealAccent, // Teal accent for checkbox
+                                activeColor: Colors.tealAccent, 
                                 onChanged: (value) => _toggleComplete(index),
                               ),
                               title: Text(
@@ -213,12 +213,12 @@ class _TodoAppState extends State<TodoApp> with TickerProviderStateMixin {
                                 children: [
                                   IconButton(
                                     icon: const Icon(Icons.edit,
-                                        color: Colors.blueGrey), // Cool blue-grey for edit
+                                        color: Colors.blueGrey), 
                                     onPressed: () => _updateTodo(index),
                                   ),
                                   IconButton(
                                     icon: const Icon(Icons.delete,
-                                        color: Colors.redAccent), // Red accent for delete
+                                        color: Colors.redAccent),
                                     onPressed: () => _deleteTodo(index),
                                   ),
                                 ],
